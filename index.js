@@ -58,10 +58,10 @@ ManageBooks.prototype.display = function () {
       btn.addEventListener('click', (e) => {
         this.delete(e);
       });
-    } else {
-      bookList.innerText = 'Empty Book List!';
-    }
-  };
+   } else {
+    bookList.innerText = 'Empty space';
+  }
+};
   
   ManageBooks.prototype.onAddBook = function (e) {
     e.preventDefault();
