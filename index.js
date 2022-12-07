@@ -59,7 +59,7 @@ ManageBooks.prototype.display = function () {
         this.delete(e);
       });
    } else {
-    bookList.innerText = 'Empty Book list,';
+    bookList.innerText = 'Empty Book list';
   }
 };
   
