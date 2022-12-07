@@ -92,4 +92,3 @@ function Book(name, writer) {
   putBookForm.addEventListener('submit', (e) => {
     books.onAddBook(e);
   });
-  
