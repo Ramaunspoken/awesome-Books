@@ -57,7 +57,11 @@ ManageBooks.prototype.display = function () {
       btn.innerText = 'Remove';
       btn.addEventListener('click', (e) => {
         this.delete(e);
-      });
+          });
+
+      li.appendChild(btn);
+      bookList.appendChild(li);
+    });
    } else {
     bookList.innerText = 'Empty Book list';
   }
