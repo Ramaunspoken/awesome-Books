@@ -38,66 +38,28 @@ ManageBooks.prototype.delete = function (e) {
   this.display();
 };
 
-// Show books
 ManageBooks.prototype.display = function () {
   const bookList = document.querySelector('.books-list');
   if (this.books.length > 0) {
     bookList.innerText = '';
-    // add books
     this.books.forEach((book) => {
-      // One book item
       const li = document.createElement('li');
       li.innerText = `${book.name} by ${book.writer}`;
       li.className = 'book-item';
 
-      // Remove
       const btn = document.createElement('button');
       btn.id = book.id;
       btn.className = 'btn-remove';
       btn.innerText = 'Remove';
       btn.addEventListener('click', (e) => {
         this.delete(e);
-          });
-
-      li.appendChild(btn);
-      bookList.appendChild(li);
-    });
-   } else {
-    bookList.innerText = 'Empty Book list';
-  }
-};
-  
-  ManageBooks.prototype.onAddBook = function (e) {
-    e.preventDefault();
-    const name = document.getElementById('name');
-    const writer = document.getElementById('writer');
-    const err = document.querySelector('.error');
-    if (name.value.trim() === '' || writer.value.trim() === '') {
-      err.innerText = 'No Book is added!, Please fill all fields to Procced.';
-    } else {
-      err.innerText = '';
-      this.put(name.value, writer.value);
-      name.value = '';
-      writer.value = '';
-    }
-  };
-  
-  const books = new ManageBooks();
-  
-  window.onload = () => {
-    books.display();
-  };
-  
-  const putBookForm = document.getElementById('put-book');
-  putBookForm.addEventListener('submit', (e) => {
-    books.onAddBook(e);
-  });
+      });
 
       li.appendChild(btn);
       bookList.appendChild(li);
     });
   } else {
-    bookList.innerText = 'Empty Book List!';
+    bookList.innerText = 'Empty Book List.';
   }
 };
 
