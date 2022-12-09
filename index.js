@@ -38,19 +38,15 @@ ManageBooks.prototype.delete = function (e) {
   this.display();
 };
 
-// Show books
 ManageBooks.prototype.display = function () {
   const bookList = document.querySelector('.books-list');
   if (this.books.length > 0) {
     bookList.innerText = '';
-    // add books
     this.books.forEach((book) => {
-      // One book item
       const li = document.createElement('li');
       li.innerText = `${book.name} by ${book.writer}`;
       li.className = 'book-item';
 
-      // Remove
       const btn = document.createElement('button');
       btn.id = book.id;
       btn.className = 'btn-remove';
@@ -63,7 +59,7 @@ ManageBooks.prototype.display = function () {
       bookList.appendChild(li);
     });
   } else {
-    bookList.innerText = 'Empty Book List!';
+    bookList.innerText = 'Empty Book List.';
   }
 };
 
