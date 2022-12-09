@@ -1,5 +1,12 @@
 import Book from './page1.js';
 
+const navItems = document.querySelectorAll('.nav-item');
+const bookSection = document.querySelector('.books-section');
+const addBookSection = document.querySelector('.put-book-section');
+const contractSection = document.querySelector('.contact-section');
+
+document.getElementById('show-date').innerText = new Date();
+
 class ManageBooks {
   constructor() {
     if (localStorage.getItem('books')) {
@@ -52,7 +59,7 @@ class ManageBooks {
         bookList.appendChild(li);
       });
     } else {
-      bookList.innerText = 'Empty Book list.';
+      bookList.innerText = 'Empty Book list';
     }
   }
 
@@ -68,6 +75,9 @@ class ManageBooks {
       this.put(name.value, writer.value);
       name.value = '';
       writer.value = '';
+      bookSection.classList.put('slide-in');
+      addBookSection.classList.remove('slide-in');
+      contractSection.classList.remove('slide-in');
     }
   }
 }
@@ -81,4 +91,31 @@ window.onload = () => {
 const putBookForm = document.getElementById('put-book');
 putBookForm.addEventListener('submit', (e) => {
   books.onAddBook(e);
+});
+
+const addNavSection = (e) => {
+  const { id } = e.target;
+  e.target.classList.add('active');
+  if (id === 'books') {
+    bookSection.classList.add('slide-in');
+    addBookSection.classList.remove('slide-in');
+    contractSection.classList.remove('slide-in');
+  } else if (id === 'add-new-book') {
+    bookSection.classList.remove('slide-in');
+    addBookSection.classList.add('slide-in');
+    contractSection.classList.remove('slide-in');
+  } else if (id === 'contact-us') {
+    bookSection.classList.remove('slide-in');
+    addBookSection.classList.remove('slide-in');
+    contractSection.classList.add('slide-in');
+  }
+};
+
+navItems.forEach((navItem) => {
+  navItem.addEventListener('click', (e) => {
+    navItems.forEach((n) => {
+      n.classList.remove('active');
+    });
+    addNavSection(e);
+  });
 });
