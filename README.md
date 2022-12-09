@@ -146,13 +146,13 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Amos Rama**
 
 - GitHub: [@githubhandle](https://github.com/Ramaunspoken)
 - Twitter: [@twitterhandle](https://twitter.com/AmosMai0877)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/amos-maina-514702248/)
 
-👤 **Author2**
+👤 **Patrick Mukula**
 
 - GitHub: [@githubhandle](https://github.com/Patfarmurs)
 - Twitter: [@twitterhandle](https://twitter.com/MukulayengeP)
